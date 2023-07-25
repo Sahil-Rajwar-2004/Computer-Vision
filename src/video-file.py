@@ -1,11 +1,14 @@
+from tkinter import filedialog
 import cv2
 import os
 
-filePATH = "assets\\ironman.mp4"
+filePATH = "assets\\"
 mainPATH = os.getcwd()
 absPATH = os.path.join(mainPATH,filePATH)
 
-cap = cv2.VideoCapture(absPATH)
+fullPATH = filedialog.askopenfilename(initialdir = absPATH,filetypes = (("MP4","*.mp4"),("AVI","*.avi")))
+
+cap = cv2.VideoCapture(fullPATH)
 
 if not cap.isOpened():
     exit()
