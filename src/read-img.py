@@ -1,12 +1,14 @@
+from tkinter import filedialog
 import cv2
 import os
 
+imagePATH = "assets\\"
 mainPATH = os.getcwd()
-imagePATH = "assets\\messi5.jpg"
 absPATH = os.path.join(mainPATH,imagePATH)
 
+fullPATH = filedialog.askopenfilename(initialdir = absPATH,filetypes = (("PNG","*png"),("JPEG","*jpeg"),("JPG","*.jpg"),("BMP","*bmp")))
 
-img = cv2.imread(absPATH,0) # Black and White kind of
+img = cv2.imread(fullPATH,0) # Black and White kind of
 """
     cv2.IMREAD_COLOR = 1            # Loads a color image
     cv2.IMREAD_GRAYSCALE = 0        # Loads image in grayscale mode
