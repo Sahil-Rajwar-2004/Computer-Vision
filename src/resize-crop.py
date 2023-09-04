@@ -12,10 +12,10 @@ fullPATH = filedialog.askopenfilename(initialdir = absPATH,filetypes = (("PNG","
 img = cv2.imread(fullPATH)
 cv2.imshow("original image",img)
 
-resizedImg = cv2.resize(img,(1000,500)) # width,height
+resizedImg = cv2.resize(img,(1000,500))
 cv2.imshow("resized image",resizedImg)
 
-cropImg = img[0:200,200:500] # height,width
+cropImg = img[0:200,200:500]
 cv2.imshow("cropped image",cropImg)
 
 cv2.waitKey()
